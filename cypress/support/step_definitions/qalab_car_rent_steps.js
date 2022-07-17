@@ -25,6 +25,11 @@ Given("An user that selected the first available car in the search result", () =
 });
 
 And("The user confirmed that all the car details are correct", () => {
+    qalabPage.getRentDetailsCarModel().then(($el) => {
+        cy.get('@carModel').then((text) => {
+            expect($el).to.contain(text)
+        })        
+    })
     qalabPage.getRentDetails().children().eq(0).then(($el) => {
         cy.get('@companyName').then((text) => {
             expect($el).to.contain(text)

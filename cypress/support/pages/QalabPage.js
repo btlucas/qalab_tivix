@@ -78,6 +78,10 @@ class QalabPage {
     getSucessMessage(){
         return cy.get('.sucess')
     }
+
+    getRentDetailsCarModel(){
+        return cy.get('.card-header')
+    }
 }
 
 export default QalabPage
